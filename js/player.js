@@ -21,7 +21,7 @@ $(function(){
 				// Check isPlaying and reverse it
 				sp.trackPlayer.setIsPlaying(!(sp.trackPlayer.getIsPlaying()),{
 					onSuccess: function(response) {
-						console.log(response);
+						//console.log(response);
 					}
 				});
 				e.preventDefault();
@@ -41,18 +41,17 @@ $(function(){
 			case "playTrackFromContext":
 				// Play an item (artist, album, playlist) from a particular position
 				sp.trackPlayer.playTrackFromContext(
-					$(this).attr('href'),
-					parseInt($(this).attr('pos')),
-					"",
-					{ onSuccess: function() {} }
+					$(this).attr('href'),				// Item to play
+					parseInt($(this).attr('pos')),		// Position to play from
+					"",									// ????
+					{ onSuccess: function() {} }		// Callback
 				);
 				e.preventDefault();
 				break;
 			case "showSharePopup":
 				// skip to next track
-				console.log(e);
 				var currentTrack = sp.trackPlayer.getNowPlayingTrack();
-				sp.social.showSharePopup(e.pageX,e.pageY,currentTrack.track.uri);
+				sp.social.showSharePopup(e.pageX,e.pageY,currentTrack.track.uri); // This will fail if you're listening to a local track :(
 				e.preventDefault();
 				break;
 		}

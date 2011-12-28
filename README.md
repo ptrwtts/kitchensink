@@ -3,7 +3,7 @@
 Spotify Kitchen Sink is demo application for the Spotify Apps API. It demonstrates some of the available functionality and is designed to help developers who are getting started. Less time reinventing the wheel, more time reinventing the record player.
 
 
-# Functionality
+## Functionality
 
 * Implement Tabs
 * Handle URI Arguments
@@ -25,14 +25,14 @@ Spotify Kitchen Sink is demo application for the Spotify Apps API. It demonstrat
 * Fetch metadata in a variety of different methods
 
 
-# Background
+## Background
 
 The Spotify Apps API is fairly new (as of December 2011), so there’s still a lot of guesswork going on. I was able to a few things out, thanks to the Sample Code and a healthy dose of trial-and-error. Exploring the source code of working applications seemed to be the best way to learn, so when a friend needed help, I whipped together this Kitchen Sink. I’m now putting it up on GitHub in case it helps anyone else.
 
 If you have any questions, or would like to contribute, please get in touch. 
 
 
-# Resources
+## Resources
 
 Here’s a few resources that helped me out along the way:
 
@@ -59,7 +59,7 @@ Apps
 Building something cool with the API? Let me know and I’ll add it!
 
 
-# Disclaimers
+## Disclaimers
 
 This is an unofficial application, not sponsored or endorsed by Spotify. If you wish to develop for Spotify Apps, you must sign up for their Developer Program, and abide by their rules.
 
@@ -70,11 +70,11 @@ This is a work in progress. There’s plenty that I’ve left out and plenty tha
 This is a hack. It’s also my first open source project. So go easy!
 
 
-# Contact
+## Contact
 
 pwattsmail at gmail dot com // @ptrwtts
 
 
-# License
+## License
 
 Distributed under the MIT license. Copyright (c) 2011 Peter Watts

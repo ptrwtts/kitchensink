@@ -1,0 +1,115 @@
+.clear {
+	clear:both;
+}
+.left {
+	float:left;
+}
+.section {
+	display:none;
+	padding:20px;
+}
+#now-playing {
+	font-size:24px;
+	margin-bottom:30px;
+}
+#now-playing a {
+	color:#eeeeee;
+}
+#commands {
+	margin-bottom:30px;
+}
+ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+a {
+	color:#eeeeee;
+}
+#search-term {
+	width:200px;
+}
+.examples {
+	margin:20px 0;
+}
+#search-results a {
+	color:#999;
+}
+/* Social */
+#social {
+	padding:0;
+}
+#friends-wrapper {
+	padding:0;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:-webkit-box;
+	-webkit-box-orient: vertical;
+	width:200px;
+}
+#friends {
+	border-right:1px solid #282828;
+	background-color: #474747;
+	-webkit-box-flex: 1;
+	overflow:auto;	
+}
+#friends a {
+	display: block;
+	border-color: rgba(255, 255, 255, 0.05) transparent rgba(0, 0, 0, 0.2);
+	border-style: solid;
+	border-width: 1px 0;
+	padding: 5px 27px 5px 42px;
+	position: relative;
+	color:#DDD;
+	font-weight:bold;
+	height:28px;
+	line-height: 28px;
+	overflow:hidden;
+}
+#friends a:hover {
+	text-decoration:none;
+	background-color:#575757;
+}
+#friends .image {
+	cursor: default;
+	height: 28px;
+	left: 7px;
+	position: absolute;
+	top: 5px;
+	width: 28px;
+}
+#friend-wrapper {
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:-webkit-box;
+	-webkit-box-orient: vertical;
+}
+#friend {
+	padding-left:200px;
+	-webkit-box-flex: 1;
+	overflow:auto;	
+}
+#friend .sp-player {
+	float:left;
+	margin-right:20px;	
+}
+#friend-details {
+	padding:20px 0 20px 20px;
+	background-color:#424242;
+	min-width:630px;
+}
+#friend-details h2 {
+	font-size:24px;
+	margin:10px 0 0;
+}
+#friend-details button {
+	margin-top:20px;
+	margin-right:10px;
+}
+#friend-tracks {
+	border-top:1px solid #282828;
+}

@@ -1,0 +1,47 @@
+{
+	"BundleType": "Application",
+	"AcceptedLinkTypes":[
+		"album",
+		"artist",
+		"track",
+		"playlist",
+		"user"
+	],
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "Kitchen Sink"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"DefaultTabs": [
+		{
+			"arguments": "player",
+			"title": {
+				"en": "Player"
+			}
+		},
+		{
+			"arguments": "social",
+			"title": {
+				"en": "Social"
+			}
+		},
+		{
+			"arguments": "search",
+			"title": {
+				"en": "Search"
+			}
+		}
+	],
+	"RequiredPermissions": [
+		"https://*",
+		"http://*"
+	],
+	"ApiPermissions" : {
+		"core":["private"],
+		"social" : ["private"]
+	}
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kitchen Sink</title>
+		<link rel="stylesheet" href="sp://import/css/adam.css">
+	    <link rel="stylesheet" href="sp://import/css/api.css">
+		<link rel="stylesheet" href="css/kitchensink.css">
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+	    <script type="text/javascript" src="js/kitchensink.js"></script>
+	    <script type="text/javascript" src="js/player.js"></script>
+	    <script type="text/javascript" src="js/social.js"></script>
+	    <script type="text/javascript" src="js/search.js"></script>
+	</head>
+	<body>
+		<div id="player" class="section">
+			<div id="now-playing"></div>
+			<div id="commands">
+				<ul>
+					<li><a href="#" command="togglePause">Toggle Pause</a></li>
+					<li><a href="#" command="skip">Skip</a></li>
+					<li><a href="#" command="playTrackFromUri">Play a Random Track from your Library</a></li>
+					<li><a href="spotify:artist:4Z8W4fKeB5YxbusRsdQVPb" command="playTrackFromContext" pos="0">Play Radiohead's top tracks</a></li>
+					<li>Play a <a href="spotify:user:pitchforkmedia:playlist:4ajBV7IPKfCi87DhkofJCb">Playlist</a> from track:
+						<a href="spotify:user:pitchforkmedia:playlist:4ajBV7IPKfCi87DhkofJCb" command="playTrackFromContext" pos="1">2</a> |
+						<a href="spotify:user:pitchforkmedia:playlist:4ajBV7IPKfCi87DhkofJCb" command="playTrackFromContext" pos="4">5</a> |
+						<a href="spotify:user:pitchforkmedia:playlist:4ajBV7IPKfCi87DhkofJCb" command="playTrackFromContext" pos="17">18</a> |
+						<a href="spotify:user:pitchforkmedia:playlist:4ajBV7IPKfCi87DhkofJCb" command="playTrackFromContext" pos="22">23</a> 
+					</li>
+					<li><a href="#" command="showSharePopup">Show Share Popup</a></li>
+				</ul>
+			</div>
+			<div id="play-history"></div>
+		</div>
+		<div id="social" class="section">
+			<!-- This is an experimental fixed-width sidebar layout. There may be a better way -->
+			<div id="friend-wrapper">
+				<div id="friend">					
+					<div id="friend-details">
+						Choose a friend once the list has loaded
+					</div>
+					<div id="friend-tracks"></div>
+				</div>
+			</div>
+			<div id="friends-wrapper">
+				<div id="friends">
+					Scanning your friends<br><br>
+					Please wait...
+				</div>
+			</div>
+		</div>
+		<div id="search" class="section">
+			Enter a search term: <input type="text" id="search-term" value="Radiohead">
+			<button id="search-basic">Search</button> | 
+			<button id="search-play">Play</button> |
+			<button id="search-explore">Explore</button>
+			<div id="search-examples" class="examples">
+				<ul>
+					<li><a href="#">The Shins</a></li>
+					<li><a href="#">Youth Lagoon 17</a></li>
+					<li><a href="#">artist:"The Beach Boys" album:"Smile"</a></li>
+					<li><a href="#">The Beatles Love Me Do</a> (will find local track if available)</li>
+					<li><a href="#">artist:"The Beatles" Love Me Do</a>  (won't find local track)</li>
+				</ul>
+			</div>
+			<div class="examples">
+				<ul>
+					<li><a href="spotify:app:kitchensink:search:basic:the+smiths">spotify:app:kitchensink:search:basic:the+smiths</a></li>
+					<li><a href="spotify:app:kitchensink:search:play:the+cure+close+to+me">spotify:app:kitchensink:search:play:the+cure+close+to+me</a></li>
+				</ul>
+			</div>
+			<div id="search-results"></div>
+		</div>
+	</body>
+</html>

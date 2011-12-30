@@ -27,7 +27,7 @@
 			"title": {
 				"en": "Search"
 			}
-		}
+        }
 	],
 	"RequiredPermissions": [
 		"https://*",

@@ -60,7 +60,7 @@ $(function(){
 							} else {
 								$("#search-results").append('<div>No tracks in results</div>');
 							}
-						}
+						} 
 					});
 					break;
 				case "search-play":

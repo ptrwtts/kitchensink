@@ -62,7 +62,7 @@ This is a hack. It’s also my first open source project. So go easy!
 
 ## Contact
 
-pwattsmail at gmail dot com // @ptrwtts
+pwattsmail at gmail dot com // [@ptrwtts](http://twitter.com/ptrwtts)
 
 
 ## License

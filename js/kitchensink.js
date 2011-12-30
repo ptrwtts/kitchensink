@@ -35,7 +35,7 @@ function handleLinks() {
 	if(links.length) {
 		// Play the given item
 		sp.trackPlayer.playTrackFromUri(links[0],{ onSuccess: function() {} });
-	}
+	} 
 }
 
 $(function(){

@@ -13,7 +13,7 @@ $(function(){
 		}
 		nowPlaying();
 		
-	});
+	}); 
 	
 	$("#commands a").click(function(e){
 		switch($(this).attr('command')) {

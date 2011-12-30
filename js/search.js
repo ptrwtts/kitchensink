@@ -6,7 +6,8 @@ function searchArgs(args) {
 	$("#search-"+args[1]).trigger('click');
 }
 
-var asyncCalls = [];  // Initiate for later
+var asyncCalls = [],  // Initiate for later
+	tempPlaylist = new m.Playlist();
 
 $(function(){
 	
@@ -41,11 +42,21 @@ $(function(){
 							}
 							$("#search-results").append("<h2>Tracks</h2>");
 							if(response.tracks.length) {
+								tempPlaylist = new m.Playlist();
 								$.each(response.tracks,function(index,track){
-									if(index<5) {
-										$("#search-results").append('<div><a href="'+track.uri+'">'+track.name+'</a></div>');
+									if(track.uri.split(":")[1]!="local") {					// Need to exclude local tracks or the artwork fails....
+										tempPlaylist.add(m.Track.fromURI(track.uri));
 									}
-								});
+								});				
+								var playlistArt = new v.Player();
+									playlistArt.track = tempPlaylist.get(0);
+									playlistArt.context = tempPlaylist;
+									$("#search-results").append(playlistArt.node);
+								var saveButton = "<button id='savePlaylist' class='add-playlist button icon'>Save As Playlist</button>";
+									$("#search-results .sp-player").append(saveButton);
+								var playlistList = new v.List(tempPlaylist);
+									playlistList.node.classList.add("temporary");
+									$("#search-results").append(playlistList.node);
 							} else {
 								$("#search-results").append('<div>No tracks in results</div>');
 							}
@@ -176,6 +187,10 @@ $(function(){
 	});
 	$("#search-examples a").click(function(e){
 		$("#search-term").val($(this).text());
+		e.preventDefault();
+	});
+	$("#savePlaylist").live('click',function(e){
+		sp.core.library.createPlaylist($("#search-term").val()+" Tracks", tempPlaylist.data.all());
 		e.preventDefault();
 	});
 	

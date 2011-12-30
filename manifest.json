@@ -4,8 +4,7 @@
 		"album",
 		"artist",
 		"track",
-		"playlist",
-		"user"
+		"playlist"
 	],
 	"AppIcon": {
 		"36x18": "tutorial.png"
@@ -24,12 +23,6 @@
 			}
 		},
 		{
-			"arguments": "social",
-			"title": {
-				"en": "Social"
-			}
-		},
-		{
 			"arguments": "search",
 			"title": {
 				"en": "Search"
@@ -39,9 +32,5 @@
 	"RequiredPermissions": [
 		"https://*",
 		"http://*"
-	],
-	"ApiPermissions" : {
-		"core":["private"],
-		"social" : ["private"]
-	}
+	]
 }

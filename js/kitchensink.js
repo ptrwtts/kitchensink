@@ -24,9 +24,6 @@ function handleArgs() {
 			case "search":
 				searchArgs(args);
 				break;
-			case "social":
-				socialArgs(args);
-				break;
 		}
 	}
 }
@@ -36,15 +33,9 @@ sp.core.addEventListener("linksChanged", handleLinks);
 function handleLinks() {
 	var links = sp.core.getLinks();
 	if(links.length) {
-		if(links[0].split(":")[1] && !links[0].split(":")[3]) {
-			// It's a user
-			window.location.href = "spotify:app:kitchensink:social:"+links[0].split(":")[2];
-		} else {
-			// It's a track / album / artist / playlist
-			sp.trackPlayer.playTrackFromUri(links[0],{ onSuccess: function() {} });
-		}
+		// Play the given item
+		sp.trackPlayer.playTrackFromUri(links[0],{ onSuccess: function() {} });
 	}
-	console.log(links);
 }
 
 $(function(){

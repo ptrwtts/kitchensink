@@ -1,4 +1,7 @@
-console.log("Use the Source, Luke");
+/**
+ *      by @ptrwtts             
+ *		https://github.com/ptrwtts/kitchensink
+ */
 
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),

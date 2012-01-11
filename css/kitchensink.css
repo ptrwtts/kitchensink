@@ -11,6 +11,7 @@
 #now-playing {
 	font-size:24px;
 	margin-bottom:30px;
+	line-height: 32px;
 }
 #now-playing a {
 	color:#eeeeee;

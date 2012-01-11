@@ -1,8 +1,8 @@
 # Spotify Kitchen Sink
 
-Spotify Kitchen Sink is demo application for the Spotify Apps API. It demonstrates some of the available functionality and is designed to help developers who are getting started. Less time reinventing the wheel, more time reinventing the record player.
+Spotify Kitchen Sink is a demo application for the Spotify Apps API. It demonstrates some of the available functionality and is designed to help developers who are getting started. Less time reinventing the wheel, more time reinventing the record player.
 
-UPDATE: Now utilising the New API found here: http://developer.spotify.com/download/spotify-apps-api/preview/reference/
+UPDATE: Now using the NEW API found here: http://developer.spotify.com/download/spotify-apps-api/preview/reference/
 
 ## Functionality
 

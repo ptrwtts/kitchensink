@@ -9,7 +9,9 @@ var sp = getSpotifyApi(1),
 	views = sp.require("sp://import/scripts/api/views"); 
 
 // Handle URI arguments
-models.application.observe(models.EVENT.ARGUMENTSCHANGED, function() {
+models.application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);
+	
+var handleArgs = function() {
 	var args = models.application.arguments;
 	$(".section").hide();	// Hide all sections
 	$("#"+args[0]).show();	// Show current section
@@ -25,10 +27,12 @@ models.application.observe(models.EVENT.ARGUMENTSCHANGED, function() {
 				break;
 		}
 	}
-});
+}
 
-// Handle Drag 'n' Drop
-models.application.observe(models.EVENT.LINKSCHANGED, function() {
+// Handle items 'dropped' on your icon
+models.application.observe(models.EVENT.LINKSCHANGED, handleLinks);
+
+var handleLinks = function() {
 	var links = sp.core.getLinks();
 	if(links.length) {
 		// Play the given item
@@ -37,6 +41,8 @@ models.application.observe(models.EVENT.LINKSCHANGED, function() {
 }
 
 $(function(){
+	
+	console.log('Loaded');
 	
 	// Run on application load
 	handleArgs();

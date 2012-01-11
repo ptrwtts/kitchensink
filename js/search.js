@@ -7,7 +7,7 @@ function searchArgs(args) {
 }
 
 var asyncCalls = [],  // Initiate for later
-	tempPlaylist = new m.Playlist();
+	tempPlaylist = new models.Playlist();
 
 $(function(){
 	
@@ -42,19 +42,19 @@ $(function(){
 							}
 							$("#search-results").append("<h2>Tracks</h2>");
 							if(response.tracks.length) {
-								tempPlaylist = new m.Playlist();
+								tempPlaylist = new models.Playlist();
 								$.each(response.tracks,function(index,track){
 									if(track.uri.split(":")[1]!="local") {					// Need to exclude local tracks or the artwork fails....
 										tempPlaylist.add(m.Track.fromURI(track.uri));
 									}
 								});				
-								var playlistArt = new v.Player();
+								var playlistArt = new views.Player();
 									playlistArt.track = tempPlaylist.get(0);
 									playlistArt.context = tempPlaylist;
 									$("#search-results").append(playlistArt.node);
 								var saveButton = "<button id='savePlaylist' class='add-playlist button icon'>Save As Playlist</button>";
 									$("#search-results .sp-player").append(saveButton);
-								var playlistList = new v.List(tempPlaylist);
+								var playlistList = new views.List(tempPlaylist);
 									playlistList.node.classList.add("temporary");
 									$("#search-results").append(playlistList.node);
 							} else {
@@ -88,7 +88,7 @@ $(function(){
 								results.artist = {};
 								var artist = response.artists[0];
 								// Artist Object		
-									results.artist["Create an Artist Object"] = m.Artist.fromURI(artist.uri);
+									results.artist["Create an Artist Object"] = models.Artist.fromURI(artist.uri);
 								// Browse URI
 									asyncCalls.push("artistBrowseUri");
 									sp.core.browseUri(artist.uri, {
@@ -128,7 +128,7 @@ $(function(){
 								results.album = {};
 								var album = response.albums[0];
 								// Album Object					
-									results.album["Create an Album Object"] = m.Album.fromURI(album.uri);
+									results.album["Create an Album Object"] = models.Album.fromURI(album.uri);
 								// Browse URI
 									asyncCalls.push("albumBrowseUri");
 									sp.core.browseUri(album.uri, {
@@ -160,7 +160,7 @@ $(function(){
 								results.track = {};
 								var track = response.tracks[0];
 								// Track Object					
-									results.track["Create a Track Object"] = m.Track.fromURI(track.uri);
+									results.track["Create a Track Object"] = models.Track.fromURI(track.uri);
 								// Get Metadata (local)
 									asyncCalls.push("trackLocalMetadata");
 									sp.core.getMetadata(track.uri, {

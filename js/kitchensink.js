@@ -6,12 +6,17 @@
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),
 	models = sp.require("sp://import/scripts/api/models"),
-	views = sp.require("sp://import/scripts/api/views"); 
+	views = sp.require("sp://import/scripts/api/views"), 
+	player = models.player,
+	library = models.library,
+	application = models.application;
+
 
 // Handle URI arguments
-models.application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);
+//application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);
+sp.core.addEventListener("argumentsChanged", handleArgs);
 	
-var handleArgs = function() {
+function handleArgs() {
 	var args = models.application.arguments;
 	$(".section").hide();	// Hide all sections
 	$("#"+args[0]).show();	// Show current section
@@ -30,13 +35,15 @@ var handleArgs = function() {
 }
 
 // Handle items 'dropped' on your icon
-models.application.observe(models.EVENT.LINKSCHANGED, handleLinks);
+//application.observe(models.EVENT.LINKSCHANGED, handleLinks);
+sp.core.addEventListener("linksChanged", handleLinks);
 
-var handleLinks = function() {
+function handleLinks() {
 	var links = sp.core.getLinks();
 	if(links.length) {
 		// Play the given item
-		sp.trackPlayer.playTrackFromUri(links[0],{ onSuccess: function() {} });
+		console.log(links);
+		player.play(models.Track.fromURI(links[0]));
 	} 
 }
 
@@ -46,7 +53,7 @@ $(function(){
 	
 	// Run on application load
 	handleArgs();
-	handleLinks();
+	//handleLinks();
 	
 });
 

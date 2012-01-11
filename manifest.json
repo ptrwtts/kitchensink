@@ -4,10 +4,11 @@
 		"album",
 		"artist",
 		"track",
-		"playlist"
+		"playlist",
+		"user"
 	],
 	"AppIcon": {
-		"36x18": "tutorial.png"
+		"18x18": "icon.png"
 	},
 	"AppName": {
 		"en": "Kitchen Sink"
@@ -20,6 +21,12 @@
 			"arguments": "player",
 			"title": {
 				"en": "Player"
+			}
+		},
+		{
+			"arguments": "social",
+			"title": {
+				"en": "Social"
 			}
 		},
 		{

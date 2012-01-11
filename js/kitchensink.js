@@ -25,10 +25,10 @@ function handleArgs() {
 	if(args[1]) {		
 		switch(args[0]) {
 			case "search":
-				searchArgs(args);
+				searchInput(args);
 				break;
 			case "social":
-				socialArgs(args);
+				socialInput(args[1]);
 				break;
 		}
 	}
@@ -41,9 +41,15 @@ sp.core.addEventListener("linksChanged", handleLinks);
 function handleLinks() {
 	var links = sp.core.getLinks();
 	if(links.length) {
-		// Play the given item
-		console.log(links);
-		player.play(models.Track.fromURI(links[0]));
+		switch(links[0].split(":")[1]) {
+			case "user":
+				socialInput(links[0].split(":")[2]);
+				break;
+			default:
+				// Play the given item
+				player.play(models.Track.fromURI(links[0]));
+				break;
+		}		
 	} 
 }
 

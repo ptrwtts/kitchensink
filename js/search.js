@@ -1,4 +1,4 @@
-function searchArgs(args) {	
+function searchInput(args) {	
 	// args[0] = page,  args[1] = command, args[2] = value 
 	// e.g. spotify:app:kitchensink:search:play:the+cure+close+to+me
 	var query = unescape(args[2].replace(/\+/g, " ")); //clean up the search query

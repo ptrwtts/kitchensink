@@ -48,3 +48,18 @@ a {
 	width:inherit;
 	max-height:inherit;
 }
+#friend-drop {
+	text-align:center;
+	padding:50px;
+	border:1px solid #000;
+	background:#333333;
+	color:#aaaaaa;
+	font-size:16px;
+	margin-bottom:10px;
+}
+#friend-title {
+	font-size:24px;
+	margin:10px 0;
+	line-height: 32px;
+	color:#cccccc;
+}

@@ -1,6 +1,7 @@
 /**
  *      by @ptrwtts             
  *		https://github.com/ptrwtts/kitchensink
+ *		Free to distribute under MIT and all that jazz
  */
 
 // Initialize the Spotify objects
@@ -11,10 +12,9 @@ var sp = getSpotifyApi(1),
 	library = models.library,
 	application = models.application;
 
-
 // Handle URI arguments
-//application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);
-sp.core.addEventListener("argumentsChanged", handleArgs);
+sp.core.addEventListener("argumentsChanged", handleArgs);			// old way
+//application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);	// new way
 	
 function handleArgs() {
 	var args = models.application.arguments;
@@ -35,11 +35,11 @@ function handleArgs() {
 }
 
 // Handle items 'dropped' on your icon
-//application.observe(models.EVENT.LINKSCHANGED, handleLinks);
-sp.core.addEventListener("linksChanged", handleLinks);
+sp.core.addEventListener("linksChanged", handleLinks);				// old way
+//application.observe(models.EVENT.LINKSCHANGED, handleLinks);		// new way
 
 function handleLinks() {
-	var links = sp.core.getLinks();
+	var links = models.application.links;
 	if(links.length) {
 		switch(links[0].split(":")[1]) {
 			case "user":
@@ -59,7 +59,7 @@ $(function(){
 	
 	// Run on application load
 	handleArgs();
-	//handleLinks();
+	handleLinks();
 	
 });
 

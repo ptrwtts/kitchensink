@@ -2,6 +2,7 @@
 
 Spotify Kitchen Sink is demo application for the Spotify Apps API. It demonstrates some of the available functionality and is designed to help developers who are getting started. Less time reinventing the wheel, more time reinventing the record player.
 
+UPDATE: Now utilising the New API found here: http://developer.spotify.com/download/spotify-apps-api/preview/reference/
 
 ## Functionality
 
@@ -19,11 +20,13 @@ Spotify Kitchen Sink is demo application for the Spotify Apps API. It demonstrat
 * Output list and album views
 * Use advanced search queries
 * Fetch metadata in a variety of different methods
+* Top Tracks for users
+* Drag n' Drop
 
 
 ## Background
 
-The Spotify Apps API is fairly new (as of December 2011), so there’s still a lot of guesswork going on. I was able to a few things out, thanks to the Sample Code and a healthy dose of trial-and-error. Exploring the source code of working applications seemed to be the best way to learn, so when a friend needed help, I whipped together this Kitchen Sink. I’m now putting it up on GitHub in case it helps anyone else.
+The Spotify Apps API is fairly new (as of December 2011), so there’s still a lot of guesswork going on. I was able to a figure few things out, thanks to the Sample Code and a healthy dose of trial-and-error. Exploring the source code of working applications seemed to be the best way to learn, so when a friend needed help, I whipped together this Kitchen Sink. I’m now putting it up on GitHub in case it helps anyone else.
 
 If you have any questions, or would like to contribute, please get in touch. 
 

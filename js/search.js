@@ -143,7 +143,10 @@ $(function(){
 		e.preventDefault();
 	});
 	$("#savePlaylist").live('click',function(e){
-		sp.core.library.createPlaylist($("#search-term").val()+" Tracks", tempPlaylist.data.all());
+		var myAwesomePlaylist = new models.Playlist($("#search-term").val()+" Tracks");
+		$.each(tempPlaylist.data.all(),function(i,track){
+			myAwesomePlaylist.add(track);
+		});
 		e.preventDefault();
 	});
 	

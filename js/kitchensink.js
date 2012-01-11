@@ -4,6 +4,8 @@
  *		Free to distribute under MIT and all that jazz
  */
 
+console.log('If you experience trouble, make sure you have the latest preview build of Spotify: http://developer.spotify.com/en/spotify-apps-api/preview/');
+
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),
 	models = sp.require("sp://import/scripts/api/models"),
@@ -55,7 +57,7 @@ function handleLinks() {
 
 $(function(){
 	
-	console.log('Loaded');
+	console.log('Loaded.');
 	
 	// Run on application load
 	handleArgs();

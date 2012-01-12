@@ -37,10 +37,9 @@ $(function(){
 });
 
 function getFriend(username) {
-	var toplist = new models.Toplist();
-	toplist.user = username;						// According to Docs, should actually be toplist.userName
-	toplist.matchType = models.TOPLISTMATCHES.TRACKS;	// Album doesn't work!
-	toplist.region = "user";
+	var toplist = new models.Toplist();	
+	toplist.userName = username;	
+	toplist.matchType = models.TOPLISTMATCHES.TRACKS;	// ALBUMS doesn't work!
 	toplist.observe(models.EVENT.CHANGE, function() {
 		showFriend(username,toplist.results);
 	});

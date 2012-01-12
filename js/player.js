@@ -68,11 +68,16 @@ function nowPlaying() {
 			playerImage.context = models.Artist.fromURI(link.uri);
 		else if (link.type === models.Link.TYPE.PLAYLIST)
 			playerImage.context = models.Playlist.fromURI(link.uri);
+		else if (link.type === models.Link.TYPE.INTERNAL) {
+			if (tempPlaylist.length > 0)
+				playerImage.context = tempPlaylist;
+		}
 			
 		$("#now-playing").empty();
 		var cover = $(document.createElement('div')).attr('id', 'player-image');
 
-		if (link.type === models.Link.TYPE.TRACK || link.type === models.Link.TYPE.LOCAL_TRACK) {
+		if (link.type === models.Link.TYPE.TRACK || link.type === models.Link.TYPE.LOCAL_TRACK ||
+			(link.type === models.Link.TYPE.INTERNAL && tempPlaylist.length == 0)) {
 			cover.append($(document.createElement('a')).attr('href', track.data.album.uri));
 			var img = new ui.SPImage(track.data.album.cover ? track.data.album.cover : "sp://import/img/placeholders/300-album.png");
 			cover.children().append(img.node);

@@ -1,5 +1,4 @@
 $(function(){
-	
 	// Update the page when the app loads
 	nowPlaying();
 	
@@ -27,6 +26,7 @@ $(function(){
 				break;				
 			case "playTrackFromUri":
 				// Grab a random track from your library (cause it's more fun)
+				clearPlaylist(tempPlaylist);
 				var tracks = library.tracks;
 				var track = tracks[Math.floor(Math.random()*tracks.length)]
 				player.play(track.uri);
@@ -59,12 +59,37 @@ function nowPlaying() {
 	if (track == null) {
 		$("#now-playing").html("Painful silence!");
 	} else {
+		var link = null;
+		if (player.context)
+			link = new models.Link(player.context);
+		else
+			link = new models.Link(player.track.uri);
+			
+		if (link.type === models.Link.TYPE.ARTIST)
+			playerImage.context = models.Artist.fromURI(link.uri);
+		else if (link.type === models.Link.TYPE.PLAYLIST)
+			playerImage.context = models.Playlist.fromURI(link.uri);
+			
+		$("#now-playing").empty();
+		var cover = $(document.createElement('div')).attr('id', 'player-image');
+
+		if (link.type === models.Link.TYPE.TRACK || link.type === models.Link.TYPE.LOCAL_TRACK) {
+			cover.append($(document.createElement('a')).attr('href', track.data.uri));
+			var img = new ui.SPImage(track.data.album.cover);
+			cover.children().append(img.node);
+		} else {
+			cover.append($(playerImage.node));
+		}
+		
+		console.log(cover);
+		$("#now-playing").append(cover);
+		
 		var song = '<a href="'+track.uri+'">'+track.name+'</a>';
 		var album = '<a href="'+track.album.uri+'">'+track.album.name+'</a>';
 		var artist = '<a href="'+track.album.artist.uri+'">'+track.album.artist.name+'</a>';
 		var context = player.context, extra ="";
 		if(context) { extra = ' from <a href="'+context+'">here</a>'; } // too lazy to fetch the actual context name
-		$("#now-playing").html(song+" by "+artist+" off "+album+extra);
+		$("#now-playing").append(song+" by "+artist+" off "+album+extra);
 	}
 	
 }

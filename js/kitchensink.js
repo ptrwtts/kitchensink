@@ -9,10 +9,12 @@ console.log('If you experience trouble, make sure you have the latest preview bu
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),
 	models = sp.require("sp://import/scripts/api/models"),
-	views = sp.require("sp://import/scripts/api/views"), 
+	views = sp.require("sp://import/scripts/api/views"),
+	ui = sp.require("sp://import/scripts/ui");
 	player = models.player,
 	library = models.library,
-	application = models.application;
+	application = models.application,
+	playerImage = new views.Player();
 
 // Handle URI arguments
 sp.core.addEventListener("argumentsChanged", handleArgs);			// old way

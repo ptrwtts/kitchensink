@@ -22,6 +22,7 @@ UPDATE: Now using the NEW API found here: http://developer.spotify.com/download/
 * Fetch metadata in a variety of different methods
 * Top Tracks for users
 * Drag n' Drop
+* Album art and overlayed player controls (when playing in a context)
 
 
 ## Background
@@ -66,6 +67,7 @@ This is a hack. It’s also my first open source project. So go easy!
 ## Contact
 
 pwattsmail at gmail dot com // [@ptrwtts](http://twitter.com/ptrwtts)
+andrew at deceptacle dot com // [@andrewburgess](http://twitter.com/andrewburgess)
 
 
 ## License

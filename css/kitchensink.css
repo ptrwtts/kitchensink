@@ -16,6 +16,15 @@
 #now-playing a {
 	color:#eeeeee;
 }
+#player-image {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#player-image, #player-image .image {
+	float:left;
+	height:128px;
+	width:128px;
+}
 #commands {
 	margin-bottom:30px;
 }

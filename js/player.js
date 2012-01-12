@@ -74,13 +74,12 @@ function nowPlaying() {
 
 		if (link.type === models.Link.TYPE.TRACK || link.type === models.Link.TYPE.LOCAL_TRACK) {
 			cover.append($(document.createElement('a')).attr('href', track.data.uri));
-			var img = new ui.SPImage(track.data.album.cover);
+			var img = new ui.SPImage(track.album.cover ? track.album.cover : "sp://import/img/placeholders/300-album.png");
 			cover.children().append(img.node);
 		} else {
 			cover.append($(playerImage.node));
 		}
 		
-		console.log(cover);
 		$("#now-playing").append(cover);
 		
 		var song = '<a href="'+track.uri+'">'+track.name+'</a>';

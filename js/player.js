@@ -73,7 +73,7 @@ function nowPlaying() {
 		var cover = $(document.createElement('div')).attr('id', 'player-image');
 
 		if (link.type === models.Link.TYPE.TRACK || link.type === models.Link.TYPE.LOCAL_TRACK) {
-			cover.append($(document.createElement('a')).attr('href', track.data.uri));
+			cover.append($(document.createElement('a')).attr('href', track.data.album.uri));
 			var img = new ui.SPImage(track.data.album.cover ? track.data.album.cover : "sp://import/img/placeholders/300-album.png");
 			cover.children().append(img.node);
 		} else {

@@ -26,7 +26,6 @@ $(function(){
 				break;				
 			case "playTrackFromUri":
 				// Grab a random track from your library (cause it's more fun)
-				clearPlaylist(tempPlaylist);
 				var tracks = library.tracks;
 				var track = tracks[Math.floor(Math.random()*tracks.length)]
 				player.play(track.uri);

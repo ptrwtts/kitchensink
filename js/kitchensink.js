@@ -4,7 +4,7 @@
  *		Free to distribute under MIT and all that jazz
  */
 
-console.log('If you experience trouble, make sure you have the latest preview build of Spotify: http://developer.spotify.com/en/spotify-apps-api/preview/');
+console.log('REQUIRES v0.8.10.2. If you experience trouble, make sure you have the latest preview build of Spotify: http://developer.spotify.com/en/spotify-apps-api/preview/');
 
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),
@@ -17,8 +17,7 @@ var sp = getSpotifyApi(1),
 	playerImage = new views.Player();
 
 // Handle URI arguments
-sp.core.addEventListener("argumentsChanged", handleArgs);			// old way
-//application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);	// new way
+application.observe(models.EVENT.ARGUMENTSCHANGED, handleArgs);
 	
 function handleArgs() {
 	var args = models.application.arguments;
@@ -39,8 +38,7 @@ function handleArgs() {
 }
 
 // Handle items 'dropped' on your icon
-sp.core.addEventListener("linksChanged", handleLinks);				// old way
-//application.observe(models.EVENT.LINKSCHANGED, handleLinks);		// new way
+application.observe(models.EVENT.LINKSCHANGED, handleLinks);
 
 function handleLinks() {
 	var links = models.application.links;

@@ -28,14 +28,16 @@ $(function(){
 				// Grab a random track from your library (cause it's more fun)
 				var tracks = library.tracks;
 				var track = tracks[Math.floor(Math.random()*tracks.length)]
-				player.play(track.uri);
+				clearPlaylist(tempPlaylist);
+				tempPlaylist.add(track.data.uri);
+				player.play(track.data.uri, tempPlaylist.data.uri, 0);
 				e.preventDefault();
 				break;
 			case "playTrackFromContext":
 				// Play an item (artist, album, playlist) from a particular position
 				player.play(
-					$(this).attr('href'),				// ????
 					$(this).attr('href'),				// Item to play
+					$(this).attr('href'),				// Context to use
 					parseInt($(this).attr('pos'))		// Position to play from
 				);
 				e.preventDefault();
@@ -49,6 +51,12 @@ $(function(){
 	});
 	
 });
+
+function clearPlaylist(playlist) {
+	while (playlist.data.length > 0) {
+		playlist.data.remove(0);
+	}
+}
 
 function nowPlaying() {
 

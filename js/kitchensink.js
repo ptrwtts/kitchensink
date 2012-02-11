@@ -4,7 +4,7 @@
  *		Free to distribute under MIT and all that jazz
  */
 
-console.log('REQUIRES v0.8.10.2. If you experience trouble, make sure you have the latest preview build of Spotify: http://developer.spotify.com/en/spotify-apps-api/preview/');
+console.log('REQUIRES v0.8.10.3. If you experience trouble, make sure you have the latest preview build of Spotify: http://developer.spotify.com/en/spotify-apps-api/preview/');
 
 // Initialize the Spotify objects
 var sp = getSpotifyApi(1),

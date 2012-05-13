@@ -1,5 +1,7 @@
 {
 	"BundleType": "Application",
+	"BundleIdentifier": "kitchensink",
+	"BundleVersion": "0.1b",
 	"AcceptedLinkTypes":[
 		"album",
 		"artist",
@@ -12,6 +14,9 @@
 	},
 	"AppName": {
 		"en": "Kitchen Sink"
+	},
+	"AppDescription": {
+		"en": "Spotify Kitchen Sink is a demo application for the Spotify Apps API."
 	},
 	"SupportedLanguages": [
 		"en"
@@ -39,5 +44,7 @@
 	"RequiredPermissions": [
 		"https://*",
 		"http://*"
-	]
+	],
+	"RequiredInterface": "1",
+	"VendorIdentifier": "com.kitchensink"
 }
